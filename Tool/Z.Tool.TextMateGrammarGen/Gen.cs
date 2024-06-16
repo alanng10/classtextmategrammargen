@@ -37,6 +37,9 @@ public class Gen : Any
         string className;
         className = this.ToolInfra.StorageTextRead("ToolData/TextMate/ClassName.txt");
 
+        string grammar;
+        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.txt");
+
         string oa;
         oa = this.KeywordList(keywordItemList);
 
@@ -64,9 +67,6 @@ public class Gen : Any
 
         string keywordRegexString;
         keywordRegexString = ob;
-
-        string grammar;
-        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.txt");
 
         string k;
         k = grammar;
