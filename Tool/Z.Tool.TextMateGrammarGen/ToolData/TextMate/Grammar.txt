@@ -1,0 +1,61 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Class",
+	"patterns": [
+		{
+			"include": "#Comment"
+		},
+		{
+			"include": "#ClassName"
+		},
+		{
+			"include": "#Keyword"
+		},
+		{
+			"include": "#IntValue"
+		},
+		{
+			"include": "#StringValue"
+		}
+	],
+	"repository": {
+		"Keyword": {
+			"patterns": [{
+				"name": "keyword.class",
+				"match": "#KeywordRegexString#"
+			}]
+		},
+		"ClassName": {
+			"patterns": [{
+				"match": "#ClassNameRegexString#",
+				"captures": {
+					"3" : { "name": "keyword.class" },
+					"6" : { "name": "entity.name.type.class" },
+					"10" : { "name": "entity.name.type.class" },
+					"12" : { "name": "keyword.class" },
+					"15" : { "name": "entity.name.type.class" },
+					"19" : { "name": "entity.name.type.class" }
+				}
+			}]
+		},
+		"Comment": {
+			"patterns": [{
+				"name": "comment.class",
+				"match": "#(.*)"
+			}]
+		},
+		"IntValue": {
+			"patterns": [{
+				"name": "constant.numeric.class",
+				"match": "\\b([0-9]+)\\b"
+			}]
+		},
+		"StringValue": {
+			"patterns": [{
+				"name": "string.quoted.class",
+				"match": "\"(((\\\\\\\\)|(\\\\\")|(\\\\n)|([^\"\\n\\\\]))*)\""
+			}]
+		}
+	},
+	"scopeName": "source.class"
+}

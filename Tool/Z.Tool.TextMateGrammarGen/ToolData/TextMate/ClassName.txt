@@ -1,0 +1,1 @@
+\b(((class)[\s]+#Name#([\s]*:[\s]*#Name#)?)|(#WordClassKeyword#[\s]+#Name#)|(#Name#[\s]+#Name#))\b

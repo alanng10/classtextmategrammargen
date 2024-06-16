@@ -1,0 +1,11 @@
+.vscode/
+/Out
+bin/
+obj/
+Actual
+*.jpg
+*.png
+*.bmp
+*.wav
+*.m4a
+*.mp4

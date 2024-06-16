@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <OutputPath>../../Out</OutputPath>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="../../../Class/Tool/Z.Infra.Infra/Z.Infra.Infra.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="ToolData/TextMate/*" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+</Project>
