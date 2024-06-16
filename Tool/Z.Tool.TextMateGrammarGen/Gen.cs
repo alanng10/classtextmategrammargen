@@ -1,4 +1,4 @@
-namespace Z.Tool.VSCode.GrammarGen;
+namespace Z.Tool.TextMateGrammarGen;
 
 public class Gen : Any
 {
@@ -8,10 +8,20 @@ public class Gen : Any
         return true;
     }
 
+    public virtual Array Arg { get; set; }
+
     protected virtual ToolInfra ToolInfra { get; set; }
 
     public virtual int Execute()
     {
+        if (this.Arg.Count < 1)
+        {
+            return 10;
+        }
+
+        string outputFilePath;
+        outputFilePath = (string)this.Arg.Get(0);
+
         string keywordItemList;
         keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Out/net8.0/ToolData/ItemListKeyword.txt");
         
@@ -56,15 +66,12 @@ public class Gen : Any
         keywordRegexString = ob;
 
         string grammar;
-        grammar = this.ToolInfra.StorageTextRead("ToolData/VSCode/Grammar.txt");
+        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.txt");
 
         string k;
         k = grammar;
         k = k.Replace("#KeywordRegexString#", keywordRegexString);
         k = k.Replace("#ClassNameRegexString#", classNameRegexString);
-
-        string outputFilePath;
-        outputFilePath = "../../VSCode/class-lang-vscode-ext/syntaxes/class.tmLanguage.json";
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;

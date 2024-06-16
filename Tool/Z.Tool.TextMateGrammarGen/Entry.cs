@@ -1,4 +1,4 @@
-namespace Z.Tool.VSCode.GrammarGen;
+namespace Z.Tool.TextMateGrammarGen;
 
 class Entry : EntryEntry
 {
@@ -6,6 +6,7 @@ class Entry : EntryEntry
     {
         Gen gen;
         gen = new Gen();
+        gen.Arg = this.Arg;
         gen.Init();
         int o;
         o = gen.Execute();
