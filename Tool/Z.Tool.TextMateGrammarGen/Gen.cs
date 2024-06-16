@@ -23,7 +23,7 @@ public class Gen : Any
         outputFilePath = (string)this.Arg.Get(0);
 
         string keywordItemList;
-        keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Tool/Z.Class.KeywordList/ToolData/ItemListKeyword.txt");
+        keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Tool/Z.Tool.Class.KeywordList/ToolData/ItemListKeyword.txt");
         
         string keyword;
         keyword = this.ToolInfra.StorageTextRead("ToolData/TextMate/Keyword.txt");
