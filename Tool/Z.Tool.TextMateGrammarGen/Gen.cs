@@ -69,14 +69,14 @@ public class Gen : Any
         oa = oa.Replace("#Name#", o);
         oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
         oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
-        oa = oa.Replace("\\", "\\\\");
+        oa = this.EscapeSlash(oa);
 
         string classNameRegexString;
         classNameRegexString = oa;
 
         string ob;
         ob = keywordA;
-        ob = ob.Replace("\\", "\\\\");
+        ob = this.EscapeSlash(ob);
 
         string keywordRegexString;
         keywordRegexString = ob;
@@ -84,7 +84,7 @@ public class Gen : Any
         oa = intValue;
         oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
         oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
-        oa = oa.Replace("\\", "\\\\");
+        oa = this.EscapeSlash(oa);
 
         string intValueRegexString;
         intValueRegexString = oa;
@@ -97,6 +97,13 @@ public class Gen : Any
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;
+    }
+
+    protected virtual string EscapeSlash(string o)
+    {
+        string a;
+        a = o.Replace("\\", "\\\\");
+        return a;
     }
 
     protected virtual string KeywordList(string o)
