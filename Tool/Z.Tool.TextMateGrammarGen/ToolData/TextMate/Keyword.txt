@@ -1,1 +1,1 @@
-\b(#WordList#)\b
+#WordBoundaryLeft#(#WordList#)#WordBoundaryRight#
