@@ -64,6 +64,8 @@ public class Gen : Any
         oa = className;
         oa = oa.Replace("#WordClassKeyword#", wordClassKeyword);
         oa = oa.Replace("#Name#", o);
+        oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
+        oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
         oa = oa.Replace("\\", "\\\\");
 
         string classNameRegexString;
