@@ -25,6 +25,12 @@ public class Gen : Any
         string keywordItemList;
         keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Tool/Z.Tool.Class.KeywordList/ToolData/ItemListKeyword.txt");
         
+        string wordBoundaryLeft;
+        wordBoundaryLeft = this.ToolInfra.StorageTextRead("ToolData/TextMate/WordBoundaryLeft.txt");
+
+        string wordBoundaryRight;
+        wordBoundaryRight = this.ToolInfra.StorageTextRead("ToolData/TextMate/WordBoundaryRight.txt");
+
         string keyword;
         keyword = this.ToolInfra.StorageTextRead("ToolData/TextMate/Keyword.txt");
 
@@ -46,6 +52,8 @@ public class Gen : Any
         string o;
         o = keyword;
         o = o.Replace("#WordList#", oa);
+        o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
+        o = o.Replace("#WordBoundaryRight#", wordBoundaryRight);
 
         string keywordA;
         keywordA = o;
