@@ -1,1 +1,1 @@
-#WordBoundaryLeft#(((class)[\s]+#Name#([\s]*:[\s]*#Name#)?)|(#WordClassKeyword#[\s]+#Name#)|(#Name#[\s]+#Name#))#WordBoundaryRight#
+#WordBoundaryLeft#(((class)[ ]+#Name#([ ]*:[ ]*#Name#)?)|(#WordClassKeyword#[ ]+#Name#)|(#Name#[ ]+#Name#))#WordBoundaryRight#
