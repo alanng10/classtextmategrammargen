@@ -47,7 +47,7 @@
 		"IntValue": {
 			"patterns": [{
 				"name": "constant.numeric.class",
-				"match": "#WordBoundaryLeft#([0-9]+)#WordBoundaryRight#"
+				"match": "#IntValueRegexString#"
 			}]
 		},
 		"StringValue": {
