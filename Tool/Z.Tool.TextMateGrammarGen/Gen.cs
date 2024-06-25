@@ -43,6 +43,9 @@ public class Gen : Any
         string className;
         className = this.ToolInfra.StorageTextRead("ToolData/TextMate/ClassName.txt");
 
+        string intValue;
+        intValue = this.ToolInfra.StorageTextRead("ToolData/TextMate/IntValue.txt");
+
         string grammar;
         grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.txt");
 
@@ -78,10 +81,19 @@ public class Gen : Any
         string keywordRegexString;
         keywordRegexString = ob;
 
+        oa = intValue;
+        oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
+        oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
+        oa = oa.Replace("\\", "\\\\");
+
+        string intValueRegexString;
+        intValueRegexString = oa;
+
         string k;
         k = grammar;
         k = k.Replace("#KeywordRegexString#", keywordRegexString);
         k = k.Replace("#ClassNameRegexString#", classNameRegexString);
+        k = k.Replace("#IntValueRegexString#", intValueRegexString);
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;
