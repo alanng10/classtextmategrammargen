@@ -47,7 +47,7 @@ public class Gen : Any
         intValue = this.ToolInfra.StorageTextRead("ToolData/TextMate/IntValue.txt");
 
         string grammar;
-        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.txt");
+        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.json");
 
         string oa;
         oa = this.KeywordList(keywordItemList);
