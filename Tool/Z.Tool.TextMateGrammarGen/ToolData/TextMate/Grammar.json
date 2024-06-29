@@ -6,9 +6,6 @@
 			"include": "#Comment"
 		},
 		{
-			"include": "#ClassName"
-		},
-		{
 			"include": "#Keyword"
 		},
 		{
