@@ -9,9 +9,6 @@
 			"include": "#KeywordClassName"
 		},
 		{
-			"include": "#Keyword"
-		},
-		{
 			"include": "#IntValue"
 		},
 		{
@@ -33,7 +30,7 @@
 						"name": "keyword.class"
 					}
 				},
-				"end": "(#Name#)|.",
+				"end": "(#Name#)|[^ \\n]",
 				"endCaptures": {
 					"4" : {
 						"name": "entity.name.type.class"
