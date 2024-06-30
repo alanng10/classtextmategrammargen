@@ -1,1 +1,0 @@
-#WordBoundaryLeft#(((class)[ ]+#Name#([ ]*:[ ]*#Name#)?)|(#WordClassKeyword#[ ]+#Name#)|(#Name#[ ]+#Name#))#WordBoundaryRight#
