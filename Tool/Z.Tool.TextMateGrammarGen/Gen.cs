@@ -64,9 +64,12 @@ public class Gen : Any
         o = name;
         o = o.Replace("#Keyword#", keywordA);
 
+        string nameA;
+        nameA = o;
+
         oa = className;
         oa = oa.Replace("#WordClassKeyword#", wordClassKeyword);
-        oa = oa.Replace("#Name#", o);
+        oa = oa.Replace("#Name#", nameA);
         oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
         oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
         oa = this.EscapeSlash(oa);
@@ -94,6 +97,10 @@ public class Gen : Any
         k = k.Replace("#KeywordRegexString#", keywordRegexString);
         k = k.Replace("#ClassNameRegexString#", classNameRegexString);
         k = k.Replace("#IntValueRegexString#", intValueRegexString);
+        k = k.Replace("#WordClassKeyword#", wordClassKeyword);
+        k = k.Replace("#Name#", nameA);
+        k = k.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
+        k = k.Replace("#WordBoundaryRight#", wordBoundaryRight);
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;
