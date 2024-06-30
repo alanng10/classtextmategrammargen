@@ -27,18 +27,26 @@
 		},
 		"KeywordClassName": {
 			"patterns": [{
-				"begin": "(?<=^|[^A-Za-z0-9_])#WordClassKeyword#[ ]*(?=$|[^A-Za-z0-9_])",
+				"begin": "(?<=^|[^A-Za-z0-9_])#WordClassKeyword#(?=$|[^A-Za-z0-9_])",
 				"beginCaptures": {
 					"1": {
 						"name": "keyword.class"
 					}
 				},
-				"end": "([ ]*#Name#)|.",
+				"end": "(#Name#)|.",
 				"endCaptures": {
 					"4" : {
 						"name": "entity.name.type.class"
 					}
-				}
+				},
+				"patterns": [
+					{
+						"include": "#Comment"
+					},
+					{
+						"match": "[ ]+"
+					}
+				]
 			}]
 		},
 		"ClassName": {
