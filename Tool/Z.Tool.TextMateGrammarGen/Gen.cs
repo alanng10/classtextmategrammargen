@@ -95,12 +95,7 @@ public class Gen : Any
         string k;
         k = grammar;
         k = k.Replace("#KeywordRegexString#", keywordRegexString);
-        k = k.Replace("#ClassNameRegexString#", classNameRegexString);
         k = k.Replace("#IntValueRegexString#", intValueRegexString);
-        k = k.Replace("#WordClassKeyword#", wordClassKeyword);
-        k = k.Replace("#Name#", nameA);
-        k = k.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        k = k.Replace("#WordBoundaryRight#", wordBoundaryRight);
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;
