@@ -34,15 +34,6 @@ public class Gen : Any
         string keyword;
         keyword = this.ToolInfra.StorageTextRead("ToolData/TextMate/Keyword.txt");
 
-        string wordClassKeyword;
-        wordClassKeyword = this.ToolInfra.StorageTextRead("ToolData/TextMate/WordClassKeyword.txt");
-
-        string name;
-        name = this.ToolInfra.StorageTextRead("ToolData/TextMate/Name.txt");
-
-        string className;
-        className = this.ToolInfra.StorageTextRead("ToolData/TextMate/ClassName.txt");
-
         string intValue;
         intValue = this.ToolInfra.StorageTextRead("ToolData/TextMate/IntValue.txt");
 
@@ -60,22 +51,6 @@ public class Gen : Any
 
         string keywordA;
         keywordA = o;
-
-        o = name;
-        o = o.Replace("#Keyword#", keywordA);
-
-        string nameA;
-        nameA = o;
-
-        oa = className;
-        oa = oa.Replace("#WordClassKeyword#", wordClassKeyword);
-        oa = oa.Replace("#Name#", nameA);
-        oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
-        oa = this.EscapeSlash(oa);
-
-        string classNameRegexString;
-        classNameRegexString = oa;
 
         string ob;
         ob = keywordA;
