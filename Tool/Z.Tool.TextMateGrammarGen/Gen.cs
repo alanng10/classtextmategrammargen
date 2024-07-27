@@ -20,7 +20,7 @@ public class Gen : Any
         }
 
         string outputFilePath;
-        outputFilePath = (string)this.Arg.Get(0);
+        outputFilePath = (string)this.Arg.GetAt(0);
 
         string keywordItemList;
         keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Tool/Z.Tool.Class.KeywordList/ToolData/ItemListKeyword.txt");
@@ -99,7 +99,7 @@ public class Gen : Any
         while (i < count)
         {
             string line;
-            line = (string)array.Get(i);
+            line = (string)array.GetAt(i);
 
             string keyword;
             keyword = this.Keyword(line);
