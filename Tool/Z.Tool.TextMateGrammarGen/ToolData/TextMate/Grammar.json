@@ -39,7 +39,7 @@
 		"ClassName": {
 			"patterns": [{
 				"name": "entity.name.type.class",
-				"match": "\\b[A-Za-z][A-Za-z0-9_]*\\b"
+				"match": "#NameRegexString#"
 			}]
 		},
 		"Keyword": {
