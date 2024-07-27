@@ -3,10 +3,13 @@
 	"name": "Class",
 	"patterns": [
 		{
-			"include": "#Comment"
+			"include": "#Info"
 		},
 		{
 			"include": "#ClassDefine"
+		},
+		{
+			"include": "#WordClass"
 		},
 		{
 			"include": "#Keyword"
@@ -29,7 +32,7 @@
 			"end": "(?=\\{)",
 			"patterns": [
 				{
-					"include": "#Comment"
+					"include": "#Info"
 				},
 				{
 					"include": "#ClassName"
@@ -51,7 +54,7 @@
 			},
 			"patterns": [
 				{
-					"include": "#Comment"
+					"include": "#Info"
 				}
 			]
 		},
@@ -67,7 +70,7 @@
 				"match": "#KeywordRegexString#"
 			}]
 		},
-		"Comment": {
+		"Info": {
 			"patterns": [{
 				"name": "comment.class",
 				"match": "#(.*)"
