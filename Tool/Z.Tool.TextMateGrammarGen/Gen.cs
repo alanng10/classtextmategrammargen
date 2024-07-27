@@ -71,6 +71,7 @@ public class Gen : Any
         intValueRegexString = oa;
 
         o = name;
+        o = o.Replace("#Keyword#", keywordA);
         o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
         o = o.Replace("#WordBoundaryRight#", wordBoundaryRight);
 
