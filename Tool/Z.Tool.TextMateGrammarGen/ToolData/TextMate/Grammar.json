@@ -20,7 +20,7 @@
 	],
 	"repository": {
 		"ClassDefine": {
-			"begin": "\\b(class)\\b",
+			"begin": "#WordBoundaryLeft#(class)#WordBoundaryRight#",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.class"
@@ -33,6 +33,25 @@
 				},
 				{
 					"include": "#ClassName"
+				}
+			]
+		},
+		"WordClass" : {
+			"begin": "#WordBoundaryLeft#(new|share|cast|prudate|probate|precate|private)#WordBoundaryRight#",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.class"
+				}
+			},
+			"end": "#NameRegexString#",
+			"endCaptures": {
+				"1": {
+					"name": "entity.name.type.class"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#Comment"
 				}
 			]
 		},
