@@ -6,6 +6,9 @@
 			"include": "#Comment"
 		},
 		{
+			"include": "ClassDefine"
+		},
+		{
 			"include": "#Keyword"
 		},
 		{
@@ -26,25 +29,17 @@
 			"end": "(?=\\{)",
 			"patterns": [
 				{
-					"include": "#comment"
+					"include": "#Comment"
 				},
 				{
-					"include": "#type-parameter-list"
-				},
-				{
-					"include": "#parenthesized-parameter-list"
-				},
-				{
-					"include": "#base-types"
-				},
-				{
-					"include": "#generic-constraints"
+					"include": "#ClassName"
 				}
 			]
 		},
-		"Name": {
+		"ClassName": {
 			"patterns": [{
-
+				"name": "entity.name.type.class",
+				"match": "\\b[A-Z][A-Za-z0-9_]*\\b"
 			}]
 		},
 		"Keyword": {
