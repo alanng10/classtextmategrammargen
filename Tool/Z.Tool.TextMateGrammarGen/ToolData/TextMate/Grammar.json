@@ -58,6 +58,9 @@
 			"patterns": [
 				{
 					"include": "#Info"
+				},
+				{
+					"include": "#Keyword"
 				}
 			]
 		},
