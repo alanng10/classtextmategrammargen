@@ -35,6 +35,9 @@
 					"include": "#Info"
 				},
 				{
+					"include": "#Keyword"
+				},
+				{
 					"include": "#ClassName"
 				}
 			]
