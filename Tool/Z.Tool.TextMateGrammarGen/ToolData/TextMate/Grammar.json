@@ -16,6 +16,37 @@
 		}
 	],
 	"repository": {
+		"ClassDefine": {
+			"begin": "\\b(class)\\b",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.class"
+				}
+			},
+			"end": "(?=\\{)",
+			"patterns": [
+				{
+					"include": "#comment"
+				},
+				{
+					"include": "#type-parameter-list"
+				},
+				{
+					"include": "#parenthesized-parameter-list"
+				},
+				{
+					"include": "#base-types"
+				},
+				{
+					"include": "#generic-constraints"
+				}
+			]
+		},
+		"Name": {
+			"patterns": [{
+
+			}]
+		},
 		"Keyword": {
 			"patterns": [{
 				"name": "keyword.class",
