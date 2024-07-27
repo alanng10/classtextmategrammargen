@@ -37,6 +37,9 @@ public class Gen : Any
         string intValue;
         intValue = this.ToolInfra.StorageTextRead("ToolData/TextMate/IntValue.txt");
 
+        string name;
+        name = this.ToolInfra.StorageTextRead("ToolData/TextMate/Name.txt");
+
         string grammar;
         grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.json");
 
@@ -67,10 +70,18 @@ public class Gen : Any
         string intValueRegexString;
         intValueRegexString = oa;
 
+        o = name;
+        o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
+        o = o.Replace("#WordBoundaryRight#", wordBoundaryRight);
+
+        string nameRegexString;
+        nameRegexString = o;
+
         string k;
         k = grammar;
         k = k.Replace("#KeywordRegexString#", keywordRegexString);
         k = k.Replace("#IntValueRegexString#", intValueRegexString);
+        k = k.Replace("#NameRegexString#", nameRegexString);
 
         this.ToolInfra.StorageTextWrite(outputFilePath, k);
         return 0;
