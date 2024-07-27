@@ -43,7 +43,7 @@
 			]
 		},
 		"WordClass" : {
-			"begin": "#WordBoundaryLeft#(new|share|cast|prudate|probate|precate|private)#WordBoundaryRight#",
+			"begin": "#WordBoundaryLeft#(new|share|cast|var|prudate|probate|precate|private)#WordBoundaryRight#",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.class"
