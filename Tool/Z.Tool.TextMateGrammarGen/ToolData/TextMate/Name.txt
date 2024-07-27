@@ -1,1 +1,1 @@
-#WordBoundaryLeft#[A-Za-z][A-Za-z0-9_]*#WordBoundaryRight#
+#WordBoundaryLeft#([A-Za-z][A-Za-z0-9_]*)#WordBoundaryRight#
