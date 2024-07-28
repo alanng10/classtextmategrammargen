@@ -49,13 +49,17 @@
 					"name": "keyword.class"
 				}
 			},
-			"end": "(#KeywordRegexString#)|(#NameRegexString#)",
+			"end": "(([A-Za-z0-9_]+)|(\"((\\\\\")|([^\"\\n]))*([\"]?)))",
 			"endCaptures": {
 				"1": {
-					"name": "keyword.class"
-				},
-				"3": {
-					"name": "entity.name.type.class"
+					"patterns": [
+						{
+							"include": "#ClassName"
+						},
+						{
+							"include": "#StringValue"
+						}
+					]
 				}
 			},
 			"patterns": [
