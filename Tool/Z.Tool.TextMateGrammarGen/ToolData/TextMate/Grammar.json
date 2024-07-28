@@ -54,10 +54,10 @@
 				"1": {
 					"patterns": [
 						{
-							"include": "#ClassName"
+							"include": "#StringValue"
 						},
 						{
-							"include": "#StringValue"
+							"include": "#ClassName"
 						}
 					]
 				}
