@@ -6,6 +6,12 @@
 			"include": "#Info"
 		},
 		{
+			"include": "#StringValue"
+		},
+		{
+			"include": "#IntValue"
+		},
+		{
 			"include": "#ClassDefine"
 		},
 		{
@@ -13,12 +19,6 @@
 		},
 		{
 			"include": "#Keyword"
-		},
-		{
-			"include": "#IntValue"
-		},
-		{
-			"include": "#StringValue"
 		}
 	],
 	"repository": {
@@ -55,6 +55,9 @@
 					"patterns": [
 						{
 							"include": "#StringValue"
+						},
+						{
+							"include": "#IntValue"
 						},
 						{
 							"include": "#Keyword"
