@@ -35,6 +35,12 @@
 					"include": "#Info"
 				},
 				{
+					"include": "#StringValue"
+				},
+				{
+					"include": "#IntValue"
+				},
+				{
 					"include": "#Keyword"
 				},
 				{
