@@ -99,12 +99,15 @@ public class Gen : Any
 
     protected virtual string KeywordList(string o)
     {
+        ToolInfra toolInfra;
+        toolInfra = this.ToolInfra;
+
         StringJoin join;
         join = new StringJoin();
         join.Init();
 
         Array array;
-        array = this.ToolInfra.SplitLineList(o);
+        array = toolInfra.SplitLineList(o);
 
         int count;
         count = array.Count;
@@ -120,9 +123,9 @@ public class Gen : Any
 
             if (0 < i)
             {
-                join.Append("|");
+                toolInfra.Append(join, "|");
             }
-            join.Append(keyword);
+            toolInfra.Append(join, keyword);
 
             i = i + 1;
         }
