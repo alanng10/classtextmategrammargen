@@ -48,14 +48,14 @@
 				}
 			]
 		},
-		"WordClass" : {
+		"WordClass": {
 			"begin": "#WordBoundaryLeft#(new|share|cast|var|prudate|probate|precate|private)#WordBoundaryRight#",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.class"
 				}
 			},
-			"end": "(([A-Za-z0-9]+)|(\"((\\\\[^\\n])|([^\"\\n]))*([\"]?))|([^# \\n]))",
+			"end": "(([A-Za-z0-9_]+)|(\"((\\\\[^\\n])|([^\"\\n]))*([\"]?))|([^# \\n]))",
 			"endCaptures": {
 				"1": {
 					"patterns": [
@@ -81,34 +81,44 @@
 			]
 		},
 		"ClassName": {
-			"patterns": [{
-				"name": "entity.name.type.class",
-				"match": "#NameRegexString#"
-			}]
+			"patterns": [
+				{
+					"name": "entity.name.type.class",
+					"match": "#NameRegexString#"
+				}
+			]
 		},
 		"Keyword": {
-			"patterns": [{
-				"name": "keyword.class",
-				"match": "#KeywordRegexString#"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.class",
+					"match": "#KeywordRegexString#"
+				}
+			]
 		},
 		"Info": {
-			"patterns": [{
-				"name": "comment.class",
-				"match": "#(.*)"
-			}]
+			"patterns": [
+				{
+					"name": "comment.class",
+					"match": "#(.*)"
+				}
+			]
 		},
 		"IntValue": {
-			"patterns": [{
-				"name": "constant.numeric.class",
-				"match": "#IntValueRegexString#"
-			}]
+			"patterns": [
+				{
+					"name": "constant.numeric.class",
+					"match": "#IntValueRegexString#"
+				}
+			]
 		},
 		"StringValue": {
-			"patterns": [{
-				"name": "string.quoted.class",
-				"match": "\"((\\\\[^\\n])|([^\"\\n]))*([\"]?)"
-			}]
+			"patterns": [
+				{
+					"name": "string.quoted.class",
+					"match": "\"((\\\\[^\\n])|([^\"\\n]))*([\"]?)"
+				}
+			]
 		}
 	},
 	"scopeName": "source.class"
