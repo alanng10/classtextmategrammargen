@@ -2,13 +2,13 @@ namespace Z.Tool.TextMateGrammarGen;
 
 class Entry : EntryEntry
 {
-    protected override int ExecuteMain()
+    protected override long ExecuteMain()
     {
         Gen gen;
         gen = new Gen();
         gen.Arg = this.Arg;
         gen.Init();
-        int o;
+        long o;
         o = gen.Execute();
         return o;
     }
@@ -18,8 +18,8 @@ class Entry : EntryEntry
     {
         EntryEntry a;
         a = new Entry();
-        a.ArgSet(arg);
         a.Init();
+        a.ArgSet(arg);
         int o;
         o = a.Execute();
         return o;

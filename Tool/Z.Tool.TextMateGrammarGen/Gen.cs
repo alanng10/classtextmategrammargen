@@ -1,52 +1,44 @@
 namespace Z.Tool.TextMateGrammarGen;
 
-public class Gen : Any
+public class Gen : ToolBase
 {
-    public override bool Init()
-    {
-        this.ToolInfra = ToolInfra.This;
-        return true;
-    }
-
     public virtual Array Arg { get; set; }
 
-    protected virtual ToolInfra ToolInfra { get; set; }
-
-    public virtual int Execute()
+    public virtual long Execute()
     {
         if (this.Arg.Count < 1)
         {
             return 10;
         }
 
-        string outputFilePath;
-        outputFilePath = (string)this.Arg.GetAt(0);
+        String outputFilePath;
+        outputFilePath = (String)this.Arg.GetAt(0);
 
-        string keywordItemList;
-        keywordItemList = this.ToolInfra.StorageTextRead("../../../Class/Tool/Z.Tool.Class.KeywordList/ToolData/ItemListKeyword.txt");
+        String keywordItemList;
+        keywordItemList = this.ToolInfra.StorageTextRead(this.S("../../../Class/Tool/Z.Tool.Class.IndexList/ToolData/ItemListIndex.txt"));
         
-        string wordBoundaryLeft;
-        wordBoundaryLeft = this.ToolInfra.StorageTextRead("ToolData/TextMate/WordBoundaryLeft.txt");
+        String wordBoundaryLeft;
+        wordBoundaryLeft = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/WordBoundaryLeft.txt"));
 
-        string wordBoundaryRight;
-        wordBoundaryRight = this.ToolInfra.StorageTextRead("ToolData/TextMate/WordBoundaryRight.txt");
+        String wordBoundaryRight;
+        wordBoundaryRight = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/WordBoundaryRight.txt"));
 
-        string keyword;
-        keyword = this.ToolInfra.StorageTextRead("ToolData/TextMate/Keyword.txt");
+        String keyword;
+        keyword = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/Index.txt"));
 
-        string intValue;
-        intValue = this.ToolInfra.StorageTextRead("ToolData/TextMate/IntValue.txt");
+        String intValue;
+        intValue = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/IntValue.txt"));
 
-        string name;
-        name = this.ToolInfra.StorageTextRead("ToolData/TextMate/Name.txt");
+        String name;
+        name = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/Name.txt"));
 
-        string grammar;
-        grammar = this.ToolInfra.StorageTextRead("ToolData/TextMate/Grammar.json");
+        String grammar;
+        grammar = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/Grammar.json"));
 
-        string oa;
+        String oa;
         oa = this.KeywordList(keywordItemList);
 
-        string o;
+        Text o;
         o = keyword;
         o = o.Replace("#WordList#", oa);
         o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
