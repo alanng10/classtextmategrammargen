@@ -50,34 +50,36 @@ public class Gen : ToolBase
         k = this.TA(keywordA);
         k = this.EscapeSlash(k);
 
-        String keywordRegexString;
-        keywordRegexString = this.StringCreate(k);
+        String indexRegexString;
+        indexRegexString = this.StringCreate(k);
 
         k = this.TA(intValue);
         k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
         k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
-        oa = this.EscapeSlash(oa);
+        k = this.EscapeSlash(k);
 
-        string intValueRegexString;
-        intValueRegexString = oa;
+        String intValueRegexString;
+        intValueRegexString = this.StringCreate(k);
 
-        o = name;
-        o = o.Replace("#Keyword#", keywordA);
-        o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        o = o.Replace("#WordBoundaryRight#", wordBoundaryRight);
+        k = this.TA(name);
+        k = this.Replace(k, "#Index#", keywordA);
+        k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
+        k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
 
-        string nameRegexString;
-        nameRegexString = o;
+        String nameRegexString;
+        nameRegexString = this.StringCreate(k);
 
-        string k;
-        k = grammar;
-        k = k.Replace("#KeywordRegexString#", keywordRegexString);
-        k = k.Replace("#IntValueRegexString#", intValueRegexString);
-        k = k.Replace("#NameRegexString#", nameRegexString);
-        k = k.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        k = k.Replace("#WordBoundaryRight#", wordBoundaryRight);
+        k = this.TA(grammar);
+        k = this.Replace(k, "#IndexRegexString#", indexRegexString);
+        k = this.Replace(k, "#IntValueRegexString#", intValueRegexString);
+        k = this.Replace(k, "#NameRegexString#", nameRegexString);
+        k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
+        k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
 
-        this.ToolInfra.StorageTextWrite(outputFilePath, k);
+        String a;
+        a = this.StringCreate(k);
+
+        this.ToolInfra.StorageTextWrite(outputFilePath, a);
         return 0;
     }
 
