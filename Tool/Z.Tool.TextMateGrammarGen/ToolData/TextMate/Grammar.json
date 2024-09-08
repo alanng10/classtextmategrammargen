@@ -18,7 +18,7 @@
 			"include": "#WordClass"
 		},
 		{
-			"include": "#Keyword"
+			"include": "#Index"
 		}
 	],
 	"repository": {
@@ -41,7 +41,7 @@
 					"include": "#IntValue"
 				},
 				{
-					"include": "#Keyword"
+					"include": "#Index"
 				},
 				{
 					"include": "#ClassName"
@@ -66,7 +66,7 @@
 							"include": "#IntValue"
 						},
 						{
-							"include": "#Keyword"
+							"include": "#Index"
 						},
 						{
 							"include": "#ClassName"
@@ -88,11 +88,11 @@
 				}
 			]
 		},
-		"Keyword": {
+		"Index": {
 			"patterns": [
 				{
 					"name": "keyword.class",
-					"match": "#KeywordRegexString#"
+					"match": "#IndexRegexString#"
 				}
 			]
 		},
