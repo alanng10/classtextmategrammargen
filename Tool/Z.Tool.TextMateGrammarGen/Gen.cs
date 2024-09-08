@@ -14,8 +14,8 @@ public class Gen : ToolBase
         String outputFilePath;
         outputFilePath = (String)this.Arg.GetAt(0);
 
-        String keywordItemList;
-        keywordItemList = this.ToolInfra.StorageTextRead(this.S("../../../Class/Tool/Z.Tool.Class.IndexList/ToolData/ItemListIndex.txt"));
+        String indexItemList;
+        indexItemList = this.ToolInfra.StorageTextRead(this.S("../../../Class/Tool/Z.Tool.Class.IndexList/ToolData/ItemListIndex.txt"));
         
         String wordBoundaryLeft;
         wordBoundaryLeft = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/WordBoundaryLeft.txt"));
@@ -36,7 +36,7 @@ public class Gen : ToolBase
         grammar = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/Grammar.json"));
 
         String oa;
-        oa = this.KeywordList(keywordItemList);
+        oa = this.IndexList(indexItemList);
 
         Text k;
         k = this.TA(keyword);
@@ -44,10 +44,10 @@ public class Gen : ToolBase
         k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
         k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
 
-        String keywordA;
-        keywordA = this.StringCreate(k);
+        String indexA;
+        indexA = this.StringCreate(k);
 
-        k = this.TA(keywordA);
+        k = this.TA(indexA);
         k = this.EscapeSlash(k);
 
         String indexRegexString;
@@ -62,7 +62,7 @@ public class Gen : ToolBase
         intValueRegexString = this.StringCreate(k);
 
         k = this.TA(name);
-        k = this.Replace(k, "#Index#", keywordA);
+        k = this.Replace(k, "#Index#", indexA);
         k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
         k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
 
@@ -89,57 +89,57 @@ public class Gen : ToolBase
         return k;
     }
 
-    protected virtual string KeywordList(string o)
+    protected virtual String IndexList(String o)
     {
-        ToolInfra toolInfra;
-        toolInfra = this.ToolInfra;
-
-        StringJoin join;
-        join = new StringJoin();
-        join.Init();
+        this.AddClear();
 
         Array array;
-        array = toolInfra.SplitLineList(o);
+        array = this.TextLimitLineString(this.TA(o));
 
-        int count;
+        long count;
         count = array.Count;
-        int i;
+        long i;
         i = 0;
         while (i < count)
         {
-            string line;
-            line = (string)array.GetAt(i);
+            String line;
+            line = (String)array.GetAt(i);
 
-            string keyword;
-            keyword = this.Keyword(line);
+            String index;
+            index = this.Index(line);
 
             if (0 < i)
             {
-                toolInfra.Append(join, "|");
+                this.AddS("|");
             }
-            toolInfra.Append(join, keyword);
+
+            this.Add(index);
 
             i = i + 1;
         }
 
-        string a;
-        a = join.Result();
+        String a;
+        a = this.AddResult();
         return a;
     }
 
-    protected virtual string Keyword(string line)
+    protected virtual String Index(String line)
     {
-        string a;
+        String a;
         a = line;
 
-        string ka;
-        ka = "Item";
-        if (a.StartsWith(ka))
+        String ka;
+        ka = this.S("Item");
+
+        bool b;
+        b = this.TextStart(this.TA(a), this.TB(ka));
+
+        if (b)
         {
-            a = a.Substring(ka.Length);
+            a = this.StringCreateIndex(a, this.StringComp.Count(ka));
         }
 
-        a = a.ToLower();
+        a = this.StringCreate(this.TextAlphaSite(this.TA(a)));
 
         return a;
     }
