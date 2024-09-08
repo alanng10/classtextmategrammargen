@@ -38,25 +38,24 @@ public class Gen : ToolBase
         String oa;
         oa = this.KeywordList(keywordItemList);
 
-        Text o;
-        o = keyword;
-        o = o.Replace("#WordList#", oa);
-        o = o.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        o = o.Replace("#WordBoundaryRight#", wordBoundaryRight);
+        Text k;
+        k = this.TA(keyword);
+        k = this.Replace(k, "#WordList#", oa);
+        k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
+        k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
 
-        string keywordA;
-        keywordA = o;
+        String keywordA;
+        keywordA = this.StringCreate(k);
 
-        string ob;
-        ob = keywordA;
-        ob = this.EscapeSlash(ob);
+        k = this.TA(keywordA);
+        k = this.EscapeSlash(k);
 
-        string keywordRegexString;
-        keywordRegexString = ob;
+        String keywordRegexString;
+        keywordRegexString = this.StringCreate(k);
 
-        oa = intValue;
-        oa = oa.Replace("#WordBoundaryLeft#", wordBoundaryLeft);
-        oa = oa.Replace("#WordBoundaryRight#", wordBoundaryRight);
+        k = this.TA(intValue);
+        k = this.Replace(k, "#WordBoundaryLeft#", wordBoundaryLeft);
+        k = this.Replace(k, "#WordBoundaryRight#", wordBoundaryRight);
         oa = this.EscapeSlash(oa);
 
         string intValueRegexString;
@@ -82,11 +81,10 @@ public class Gen : ToolBase
         return 0;
     }
 
-    protected virtual string EscapeSlash(string o)
+    protected virtual Text EscapeSlash(Text k)
     {
-        string a;
-        a = o.Replace("\\", "\\\\");
-        return a;
+        k = this.Replace(k, "\\", this.S("\\\\"));
+        return k;
     }
 
     protected virtual string KeywordList(string o)
