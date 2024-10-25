@@ -15,7 +15,7 @@ public class Gen : ToolBase
         outputFilePath = (String)this.Arg.GetAt(0);
 
         String indexItemList;
-        indexItemList = this.ToolInfra.StorageTextRead(this.S("../../../Class/Tool/Z.Tool.Saber.IndexList/ToolData/Saber/ItemListIndex.txt"));
+        indexItemList = this.ToolInfra.StorageTextRead(this.S("../../../Class/Tool/Z.Tool.Saber.IndexList/ToolData/Class/ItemListIndex.txt"));
 
         String wordBoundaryLeft;
         wordBoundaryLeft = this.ToolInfra.StorageTextRead(this.S("ToolData/TextMate/WordBoundaryLeft.txt"));
